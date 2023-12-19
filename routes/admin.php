@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/login', [AdminAuthController::class,'login'])->name('login');
+    Route::get('/dashboard-teste', [AdminAuthController::class,'teste'])->name('login');
     Route::get('/forget-password', [AdminAuthController::class,'forgetPassword'])->name('login.forget-password');
     Route::post('/forget-password', [AdminAuthController::class,'forgetRequest'])->name('password.request');
 

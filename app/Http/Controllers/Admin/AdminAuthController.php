@@ -38,5 +38,9 @@ class AdminAuthController extends Controller
 
     }
 
+    public function teste()
+    {
+        return view('admin.layouts.master');
+    }
 
 }

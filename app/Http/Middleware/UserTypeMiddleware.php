@@ -15,6 +15,11 @@ class UserTypeMiddleware
      */
     public function handle(Request $request, Closure $next, string $userType): Response
     {
+
+        if(!isset($request->user()->user_type) ) {
+            return  redirect()->route('login')->with('error', 'You are not logged in');
+        }
+
         if ($request->user()->user_type === $userType) {
             return $next($request);
         }
