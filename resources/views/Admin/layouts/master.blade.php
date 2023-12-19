@@ -21,6 +21,7 @@
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
         {{-- sidebar --}}
+        @include('admin.layouts.navbar')
         @include('admin.layouts.sidebar')
         <!-- Main Content -->
         <div class="main-content">
