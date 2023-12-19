@@ -15,7 +15,7 @@
             <div class="col-xl-3">
                 <div class="wsus__featured_single">
                     <div class="wsus__featured_single_img">
-                        <img src="images/location_1.jpg" alt="images" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/location_1.jpg') }}" alt="images" class="img-fluid w-100">
                         <a href="#" class="love"><i class="fas fa-heart"></i></a>
                         <a href="#" class="small_text">market</a>
                     </div>
@@ -38,7 +38,7 @@
             <div class="col-xl-3">
                 <div class="wsus__featured_single">
                     <div class="wsus__featured_single_img">
-                        <img src="images/location_2.jpg" alt="images" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/location_2.jpg') }}" alt="images" class="img-fluid w-100">
                         <a href="#" class="love"><i class="fas fa-heart"></i></a>
                         <a href="#" class="small_text">school</a>
                     </div>
@@ -61,7 +61,7 @@
             <div class="col-xl-3">
                 <div class="wsus__featured_single">
                     <div class="wsus__featured_single_img">
-                        <img src="images/location_3.jpg" alt="images" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/location_3.jpg') }}" alt="images" class="img-fluid w-100">
                         <a href="#" class="love"><i class="fas fa-heart"></i></a>
                         <a href="#" class="small_text">shopping mall</a>
                     </div>
@@ -84,7 +84,7 @@
             <div class="col-xl-3">
                 <div class="wsus__featured_single">
                     <div class="wsus__featured_single_img">
-                        <img src="images/location_4.jpg" alt="images" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/location_4.jpg') }}" alt="images" class="img-fluid w-100">
                         <a href="#" class="love"><i class="fas fa-heart"></i></a>
                         <a href="#" class="small_text">park</a>
                     </div>
@@ -107,7 +107,7 @@
             <div class="col-xl-3">
                 <div class="wsus__featured_single">
                     <div class="wsus__featured_single_img">
-                        <img src="images/location_5.jpg" alt="images" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/location_5.jpg') }}" alt="images" class="img-fluid w-100">
                         <a href="#" class="love"><i class="fas fa-heart"></i></a>
                         <a href="#" class="small_text">school and college</a>
                     </div>
