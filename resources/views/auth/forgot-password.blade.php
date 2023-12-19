@@ -46,6 +46,11 @@
                       Reset Password
                     </button>
                   </div>
+                  <div class="form-group">
+                    <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block" tabindex="4">
+                      Back
+                    </a>
+                  </div>
                 </form>
               </div>
             </div>

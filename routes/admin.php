@@ -15,4 +15,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['user.type:admin']], function(){
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
+    Route::get('/dashboard/profile', [DashboardController::class,'profile'])->name('dashboard.profile');
 });
