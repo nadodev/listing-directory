@@ -4,47 +4,66 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProfileUpdateRequest;
+use App\Models\User;
+use App\Traits\FileUploadTrait;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+
+    use FileUploadTrait;
     public function index(): View
     {
-        return view('admin.dashboard.profile');
+        $user = User::find(auth()->user()->id);
+        return view('admin.dashboard.profile', compact('user'));
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $id = auth()->user()->id;
-        $profile = $request->validated();
+       $request->validated();
 
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $avatar_name = $id . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('uploads/avatars'), $avatar_name);
-            $profile['avatar'] = $avatar_name;
-        }
+        $oldAvatar = $request->old_avatar ?? null;
+        $oldBanner = $request->old_banner ?? null;
 
-        if ($request->hasFile('banner')) {
-            $banner = $request->file('banner');
-            $banner_name = $id . '.' . $banner->getClientOriginalExtension();
-            $banner->move(public_path('uploads/banners'), $banner_name);
-            $profile['banner'] = $banner_name;
-        }
+        $avatarPath = $this->uploadImage($request, 'avatar', $oldAvatar);
+        $bannerPath = $this->uploadImage($request, 'banner', $oldBanner);
 
+        $user =   User::find(auth()->user()->id);
 
-      if($request->password){
-          $profile['password'] = bcrypt($request->password);
-        }else{
-            unset($profile['password']);
-        }
+        $user->avatar     = !empty($avatarPath) ? $avatarPath :  $oldAvatar;
+        $user->banner     = !empty($bannerPath) ? $bannerPath :  $oldBanner;
+        $user->name       = $request->name;
+        $user->email      = $request->email;
+        $user->about      = $request->about;
+        $user->website    = $request->website;
+        $user->address    = $request->address;
+        $user->phone      = $request->phone;
+        $user->fb_link    = $request->fb_link;
+        $user->x_link     = $request->x_link;
+        $user->intra_link = $request->intra_link;
+        $user->in_link    = $request->in_link;
+        $user->password   = $oldPassword;
 
-        
-
+        $user->save();
 
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
+    public function updatePassword(Request $request): RedirectResponse
+    {
+        );
+
+        $user = User::find(auth()->user()->id);
+
+        if(!password_verify($request->old_password, $user->password)) {
+            return redirect()->back()->with('error', 'Old password does not match.');
+        }
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return redirect()->back()->with('success', 'Password updated successfully.');
+    }
 }

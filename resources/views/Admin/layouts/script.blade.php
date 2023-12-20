@@ -6,6 +6,7 @@
 
 <!-- JS Libraies -->
 <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- Template JS File -->
 <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
+

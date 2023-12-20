@@ -10,3 +10,6 @@
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('/admin/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('/admin/assets/css/components.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+

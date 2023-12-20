@@ -35,6 +35,13 @@
 
   <!-- General JS Scripts -->
   @include('admin.layouts.script')
+<script>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            toastr.error('{{ $error }}');
+        @endforeach
+    @endif
+</script>
     <!-- Page Specific JS File -->
     @stack('page-scripts')
 </body>
