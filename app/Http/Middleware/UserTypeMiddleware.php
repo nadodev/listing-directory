@@ -24,6 +24,6 @@ class UserTypeMiddleware
             return $next($request);
         }
 
-        return to_route('dashboard');
+        return to_route('user.dashboard');
     }
 }

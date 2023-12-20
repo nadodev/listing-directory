@@ -17,7 +17,7 @@
                     <div class="card">
                         <form method="post" action="{{ route('admin.profile.update', ) }}" class="needs-validation" novalidate="" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
+                            @method('put')
                             <div class="card-header">
                                 <h4>Edit Profile</h4>
                             </div>
@@ -170,9 +170,9 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
-                        <form method="post" action="{{ route('admin.profile.update', ) }}" class="needs-validation" novalidate="" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.profile.password', ) }}" class="needs-validation" novalidate="">
                             @csrf
-                            @method('PUT')
+                            @method('put')
                             <div class="card-header">
                                 <h4>Edit Password</h4>
                             </div>
@@ -190,10 +190,10 @@
                                     </div>
                                     <div class="form-group col-md-6 col-12">
                                         <label>Confirm Password</label>
-                                        <input type="password" class="form-control" value="" name="conf_password">
-                                       @if($errors->has('conf_password'))
+                                        <input type="password" class="form-control" value="" name="password_confirmation">
+                                       @if($errors->has('password_confirmation'))
                                             <div class="text-danger">
-                                                {{ $errors->first('conf_password') }}
+                                                {{ $errors->first('password_confirmation') }}
                                             </div>
                                         @endif
 

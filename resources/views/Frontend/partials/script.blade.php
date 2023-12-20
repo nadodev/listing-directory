@@ -1,4 +1,3 @@
-
     <!--jquery library js-->
     <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
     <!--bootstrap js-->
@@ -20,6 +19,11 @@
     <script src="{{ asset('frontend/js/summernote.min.js') }}"></script>
     <!--select js-->
     <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>

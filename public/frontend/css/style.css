@@ -274,7 +274,11 @@ button {
 }
 
 .wsus__topbar_right a {
-	width: 80px;
+	width: 114px;
+    display:flex;
+    gap:6px;
+    justify-content: center;
+    align-items: center;
 	height: 35px;
 	background: var(--colorWhite);
 	color: var(--colorPrimary);
@@ -1759,7 +1763,7 @@ FEATURED LISTING  END
 }
 
 /*===================
-   OUR PACKAGE END	
+   OUR PACKAGE END
 =====================*/
 
 
@@ -1956,7 +1960,7 @@ FEATURED LISTING  END
 
 
 /*===================
-TESTIMONIAL PART START	
+TESTIMONIAL PART START
 =====================*/
 #wsus__testimonial {
 	background: #f9fafc;

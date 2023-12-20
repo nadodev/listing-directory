@@ -17,6 +17,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['user.type
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
 
     Route::get('/profile', [ProfileController::class,'index'])->name('profile');
-    Route::post('/profile', [ProfileController::class,'update'])->name('profile.update');
-    Route::post('/profile-password', [ProfileController::class,'updatePassword'])->name('profile.password');
+    Route::put('/profile', [ProfileController::class,'update'])->name('profile.update');
+    Route::put('/profile-password', [ProfileController::class,'updatePassword'])->name('profile.password');
 });
